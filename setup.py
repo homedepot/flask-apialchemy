@@ -17,7 +17,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as r_file:
 
 setup(name='Flask-APIAlchemy',
       version=VERSION,
-      description='Adds APIAlchemy support to your Flask application, modeled after Flask-APIAlchemy.',
+      description='Adds APIAlchemy support to your Flask application, modeled after Flask-SQLAlchemy.',
       long_description=readme,
       long_description_content_type='text/markdown',
       license='BSD-3-Clause',
