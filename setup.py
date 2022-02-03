@@ -29,7 +29,7 @@ setup(name='Flask-APIAlchemy',
       ],
       install_requires=[
           'APIAlchemy',
-          'Flask>=1.0.2'
+          'Flask>=1.0.2,<2.0.0',
       ],
       tests_require=[
           'pytest'

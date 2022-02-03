@@ -1,10 +1,12 @@
+import warnings
+
 import apialchemy
 
 from flask import current_app
 
 from threading import Lock
 
-__version__ = '1.0.0.post1'
+__version__ = '1.1.0'
 
 
 def get_state(app):
@@ -67,6 +69,14 @@ class APIAlchemy:
             self.init_app(app)
 
     def init_app(self, app):
+        if (
+            'APIALCHEMY_SERVICE_URI' not in app.config and
+            'APIALCHEMY_BINDS' not in app.config
+        ):
+            warnings.warn(
+                'Neither APIALCHEMY_SERVICE_URI nor APIALCHEMY_BINDS is set.'
+            )
+
         app.extensions['apialchemy'] = _APIAlchemyState(self)
 
     @property
